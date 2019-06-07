@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "585828249822",
+    "firebase_url": "https://tonos-gratis-4f4f4.firebaseio.com",
+    "project_id": "tonos-gratis-4f4f4",
+    "storage_bucket": "tonos-gratis-4f4f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585828249822:android:156ceb77059ed6f9",
+        "android_client_info": {
+          "package_name": "com.doskapps.tonosgratis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585828249822-ahfso59k6vn6n80occfce9daitbkbi84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAolWtOo2EUJHc1n_fKodycoezhz3D89rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585828249822-ahfso59k6vn6n80occfce9daitbkbi84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

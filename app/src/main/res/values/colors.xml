@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6666</color>
+    <color name="colorPrimaryDark">#5D47D3</color>
+    <color name="colorAccent">#FF6666</color>
+    <color name="white">#ffffff</color>
+    <color name="white80">#80ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black40">#40000000</color>
+    <color name="black20">#20000000</color>
+    <color name="blackAA">#AA000000</color>
+    <color name="black_nav">#cc000000</color>
+    <color name="abcdef">#abcdef</color>
+    <color name="nav_checked">#dc473a</color>
+    <color name="primary_progress">#D454A7</color>
+    <color name="secondary_progress">#FF6666</color>
+    <color name="player_Artist">#686075</color>
+    <color name="statusBar">#D454A7</color>
+    <color name="pink">#5D47D3</color>
+    <color name="bg_gradient_color1">#FF6666</color>
+    <color name="bg_gradient_color2">#D3E68A</color>
+    <color name="orange">#f99120</color>
+    <color name="bg_navi_selected">#FF6666</color>
+    <color name="bg_navi_text_selected">#ffffff</color>
+    <color name="bg_navi_image_selected">#ffffff</color>
+    <color name="bg_navi_unselected">#ffffff</color>
+    <color name="bg_navi_text_unselected">#AA000000</color>
+    <color name="grey">#96a3ac</color>
+    <color name="red">#ff0000</color>
+</resources>

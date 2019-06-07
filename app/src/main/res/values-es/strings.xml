@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tonos Gratis</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="play_more_apps">https://play.google.com/store/apps/developer?id=Vishal+Android+Apps</string>
+
+    <string name="privacy_policy_url">https://doskapps.com/politicas</string>
+
+    <!--if you want rtl change value of isRTL to true else false-->
+    <string name="isRTL">false</string>
+
+
+    <!--change all this text in your language-->
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="error">Error</string>
+    <string name="success">Éxito</string>
+    <string name="server_no_conn">Error, Servidor no conectado</string>
+    <string name="loading">Cargando..</string>
+    <string name="recently_played">Recién Reproducidos</string>
+    <string name="search">Buscar</string>
+    <string name="no_data_found">Datos no encontrados</string>
+    <string name="internet_not_conn">No estás conectado a Internet</string>
+    <string name="artist">Artistas</string>
+    <string name="category">Categorías</string>
+    <string name="developedby">Desarrollado Por</string>
+    <string name="home">Inicio</string>
+    <string name="press_again_exit">Presiona otra vez para salir</string>
+    <string name="categories">Categorias</string>
+    <string name="favourite">Favoritas</string>
+    <string name="removed_fav">Lo quitaste de Tus Favoritos</string>
+    <string name="added_fav">Lo agregaste a Tus Favoritos</string>
+    <string name="share_song">Comparte este Tono</string>
+    <string name="song">Tonos</string>
+    <string name="downloading">Descargando</string>
+    <string name="already_download">Este Archivo ya lo habías descargado</string>
+    <string name="volume">Volumen</string>
+    <string name="cannot_use_save">No se puede usar la función de guardar sin el permiso solicitado</string>
+    <string name="version">Version</string>
+    <string name="author">Autor</string>
+    <string name="company">Compañía</string>
+    <string name="email">Email</string>
+    <string name="website">Website</string>
+    <string name="contact">Contacto</string>
+    <string name="desc">Descripcion</string>
+    <string name="privacy">Políticas de Privacidad</string>
+    <string name="rate_app">Calificar App</string>
+    <string name="share_app">Compartir App</string>
+    <string name="more_app">Más Apps</string>
+    <string name="downloads">Descargas</string>
+    <string name="no_song_selected">No seleccionaste ningún Tono/Sonido</string>
+    <string name="listening">Ahora estoy escuchando</string>
+    <string name="my_playlist">Mi Playlist</string>
+    <string name="add_playlist">Agregar PlayList</string>
+    <string name="enter_playlist_name">Ponle nombre a Tu Playlist</string>
+    <string name="add">Agregar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="playlist_added">Playlist Creada</string>
+    <string name="remove">Remover</string>
+    <string name="remove_playlist">Playlist removida</string>
+    <string name="remove_from_playlist">Eliminado de la lista de Reproducción</string>
+    <string name="add_to_playlist">Agregar a la lista de Reproducción</string>
+    <string name="song_add_to_playlist">Añadir Tono/Sonido a la lista de Reproducción - </string>
+    <string name="close">Cerrar</string>
+    <string name="select_rating_msg">Dale 5 Estrellas ;)</string>
+    <string name="rating">Clasificación</string>
+    <string name="thanks_for_rating">Gracias por Calificar</string>
+    <string name="submit">Enviar</string>
+    <string name="delete">Borrar</string>
+    <string name="sure_delete">¿Seguro que quieres borrar este sonido?</string>
+    <string name="file_deleted">Archivo Eliminado</string>
+    <string name="playlist">Playlist</string>
+    <string name="nav_header_line">Diviertete con tus Tonos preferidos</string>
+    <string name="maybe_later">Tal vez Luego</string>
+    <string name="latest_artist">Últimos Artistas</string>
+    <string name="about">Acerca de</string>
+    <string name="title">Titulo</string>
+    <string name="select_rating">Selecciona una Calificación</string>
+    <string name="custom_settings">CONFIGURACION PERSONALIZADA</string>
+    <string name="your_ad_consent">Tu Consentimiento de Anuncios</string>
+    <string name="show_personalized_ad">Mostrar Anuncios Personalizados</string>
+    <string name="enable_push_noti">Activar Notificaciones Push</string>
+    <string name="download_path">Descargar Ruta</string>
+    <string name="albums">Álbumes</string>
+    <string name="try_again">Intenta Otra Vez</string>
+    <string name="rate_song">Calificar este Sonido</string>
+</resources>
