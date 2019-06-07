@@ -187,11 +187,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
 
-        String[] menu_names = {getString(R.string.home), getString(R.string.categories), getString(R.string.artist),getString(R.string.albums),
+        String[] menu_names = {getString(R.string.home), getString(R.string.categories), /*getString(R.string.artist),getString(R.string.albums),*/
                 getString(R.string.playlist),getString(R.string.my_playlist), getString(R.string.downloads), getString(R.string.favourite), getString(R.string.share_app),
                 getString(R.string.rate_app), getString(R.string.action_settings)};
 
-        Integer[] menu_images = {R.mipmap.home, R.mipmap.cat, R.mipmap.artist, R.mipmap.albums, R.mipmap.playlist, R.mipmap.playlist,
+        Integer[] menu_images = {R.mipmap.home, R.mipmap.cat, /*R.mipmap.artist, R.mipmap.albums,*/ R.mipmap.playlist, R.mipmap.playlist,
                 R.mipmap.nav_download, R.mipmap.heart,R.mipmap.share_nav, R.mipmap.rate, R.mipmap.setting};
         adapterNavigation = new AdapterNavigation(MainActivity.this, menu_names, menu_images, recyclerClickListener);
         recyclerView.setAdapter(adapterNavigation);
