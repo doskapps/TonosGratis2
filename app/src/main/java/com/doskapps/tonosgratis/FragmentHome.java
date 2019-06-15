@@ -74,7 +74,7 @@ public class FragmentHome extends Fragment {
         progressHUD.setSpinnerType(ZProgressHUD.FADED_ROUND_SPINNER);
 
         textView_empty = rootView.findViewById(R.id.textView_recent_empty);
-        textView_empty_artist = rootView.findViewById(R.id.textView_artist_empty);
+        //textView_empty_artist = rootView.findViewById(R.id.textView_artist_empty);
 
         adapter = new ImagePagerAdapter();
         viewpager = rootView.findViewById(R.id.viewPager_home);
@@ -93,11 +93,11 @@ public class FragmentHome extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
 
-        recyclerView_artist = rootView.findViewById(R.id.recyclerView_home_artist);
+        //recyclerView_artist = rootView.findViewById(R.id.recyclerView_home_artist);
         llm_artist = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView_artist.setLayoutManager(llm_artist);
-        recyclerView_artist.setItemAnimator(new DefaultItemAnimator());
-        recyclerView_artist.setHasFixedSize(true);
+        //recyclerView_artist.setLayoutManager(llm_artist);
+        //recyclerView_artist.setItemAnimator(new DefaultItemAnimator());
+        //recyclerView_artist.setHasFixedSize(true);
 
         ll_home = rootView.findViewById(R.id.ll_home);
         ll_empty = rootView.findViewById(R.id.ll_empty);
@@ -134,30 +134,30 @@ public class FragmentHome extends Fragment {
             }
         }));
 
-        recyclerView_artist.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                if (JsonUtils.isNetworkAvailable(getActivity())) {
-                    FragmentManager fm = getFragmentManager();
-                    FragmentSongByAlbums f1 = new FragmentSongByAlbums();
-                    FragmentTransaction ft = fm.beginTransaction();
-
-                    Bundle bundl = new Bundle();
-
-                    bundl.putString("type", getString(R.string.artist));
-                    bundl.putString("id", arrayList_artist.get(position).getId());
-                    bundl.putString("name", arrayList_artist.get(position).getName());
-                    f1.setArguments(bundl);
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.hide(getFragmentManager().findFragmentByTag(getResources().getString(R.string.home)));
-                    ft.add(R.id.fragment, f1, arrayList_artist.get(position).getName());
-                    ft.addToBackStack(arrayList_artist.get(position).getName());
-                    ft.commit();
-                } else {
-                    Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
-                }
-            }
-        }));
+//        recyclerView_artist.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                if (JsonUtils.isNetworkAvailable(getActivity())) {
+//                    FragmentManager fm = getFragmentManager();
+//                    FragmentSongByAlbums f1 = new FragmentSongByAlbums();
+//                    FragmentTransaction ft = fm.beginTransaction();
+//
+//                    Bundle bundl = new Bundle();
+//
+//                    bundl.putString("type", getString(R.string.artist));
+//                    bundl.putString("id", arrayList_artist.get(position).getId());
+//                    bundl.putString("name", arrayList_artist.get(position).getName());
+//                    f1.setArguments(bundl);
+//                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//                    ft.hide(getFragmentManager().findFragmentByTag(getResources().getString(R.string.home)));
+//                    ft.add(R.id.fragment, f1, arrayList_artist.get(position).getName());
+//                    ft.addToBackStack(arrayList_artist.get(position).getName());
+//                    ft.commit();
+//                } else {
+//                    Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        }));
 
         button_try.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -292,8 +292,8 @@ public class FragmentHome extends Fragment {
             if (getActivity() != null) {
                 loadRecent();
                 if (s.equals("1")) {
-                    adapterArtistLatest = new AdapterArtistLatest(getActivity(), arrayList_artist);
-                    recyclerView_artist.setAdapter(adapterArtistLatest);
+                    //adapterArtistLatest = new AdapterArtistLatest(getActivity(), arrayList_artist);
+                    //recyclerView_artist.setAdapter(adapterArtistLatest);
                     progressHUD.dismissWithSuccess(getResources().getString(R.string.success));
                 } else {
                     progressHUD.dismissWithFailure(getResources().getString(R.string.error));
@@ -317,13 +317,13 @@ public class FragmentHome extends Fragment {
             textView_empty.setVisibility(View.GONE);
         }
 
-        if (arrayList_artist.size() == 0) {
-            recyclerView_artist.setVisibility(View.GONE);
-            textView_empty_artist.setVisibility(View.VISIBLE);
-        } else {
-            recyclerView_artist.setVisibility(View.VISIBLE);
-            textView_empty_artist.setVisibility(View.GONE);
-        }
+//        if (arrayList_artist.size() == 0) {
+//            recyclerView_artist.setVisibility(View.GONE);
+//            textView_empty_artist.setVisibility(View.VISIBLE);
+//        } else {
+//            recyclerView_artist.setVisibility(View.VISIBLE);
+//            textView_empty_artist.setVisibility(View.GONE);
+//        }
     }
 
     public void setEmpty() {
