@@ -450,7 +450,7 @@ public class PlayerService extends IntentService {
             notification.setStyle(new android.support.v4.media.app.NotificationCompat.MediaStyle()
                     .setMediaSession(mMediaSession.getSessionToken())
                     .setShowCancelButton(true)
-                    .setShowActionsInCompactView(0, 1, 2)
+                    .setShowActionsInCompactView(0, 1, 2, 3)
                     .setCancelButtonIntent(
                             MediaButtonReceiver.buildMediaButtonPendingIntent(
                                     Constant.context, PlaybackStateCompat.ACTION_STOP)))
