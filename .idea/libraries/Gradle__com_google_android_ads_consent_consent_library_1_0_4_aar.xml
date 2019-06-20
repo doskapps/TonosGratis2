@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.ads.consent:consent-library:1.0.4@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/consent-library-1.0.4.aar/e6ee5b603a1e3f7468fe6e379e8ad5fb/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/consent-library-1.0.4.aar/e6ee5b603a1e3f7468fe6e379e8ad5fb/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/consent-library-1.0.4.aar/67e7fcd4122d4ccfc83045d1ea6287da/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/consent-library-1.0.4.aar/67e7fcd4122d4ccfc83045d1ea6287da/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
