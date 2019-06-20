@@ -100,7 +100,7 @@ public class Constant implements Serializable {
     public static int adCount = 0;
     public static int adDisplay = 5;
 
-    public static String ad_publisher_id = "pub-8356404931736973";
-    public static String ad_banner_id = "ca-app-pub-3940256099942544/6300978111";
-    public static String ad_inter_id = "ca-app-pub-3940256099942544/1033173712";
+    public static String ad_publisher_id = "pub-7602201078320441";
+    public static String ad_banner_id = "ca-app-pub-7602201078320441/8798847613";
+    public static String ad_inter_id = "ca-app-pub-7602201078320441/2430123656";
 }

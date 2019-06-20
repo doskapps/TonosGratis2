@@ -27,7 +27,7 @@ public class AdConsent {
     }
 
     public void checkForConsent() {
-//        ConsentInformation.getInstance(context).addTestDevice("BAA64B95360002E8FC3FFE8464BB51BB");
+//        ConsentInformation.getInstance(context).addTestDevice("0EC517A202BD8C859CF67FB420E24129");
 //        ConsentInformation.getInstance(context).setDebugGeography(DebugGeography.DEBUG_GEOGRAPHY_EEA);
 
         ConsentInformation consentInformation = ConsentInformation.getInstance(context);
