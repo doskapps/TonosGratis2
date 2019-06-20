@@ -199,6 +199,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void addtoAbout() {
         try {
+            Log.d("@@@@", Constant.ad_publisher_id + "','" + Constant.ad_banner_id + "','" + Constant.ad_inter_id);
             dml("delete from about");
             dml("insert into about (name,logo,version,author,contact,email,website,desc,developed,privacy, ad_pub, ad_banner, ad_inter, isbanner, isinter, click, isdownload) values (" +
                     "'" + Constant.itemAbout.getAppName() + "','" + Constant.itemAbout.getAppLogo() + "','" + Constant.itemAbout.getAppVersion() + "'" +

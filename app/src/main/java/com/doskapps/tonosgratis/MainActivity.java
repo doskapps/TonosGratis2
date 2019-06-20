@@ -403,23 +403,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 FragmentCat fcat = new FragmentCat();
                 loadFrag(fcat, getResources().getString(R.string.categories), fm);
                 break;
-            case 2:
+            /*case 2:
                 FragmentArtist fart = new FragmentArtist();
                 loadFrag(fart, getResources().getString(R.string.artist), fm);
                 break;
             case 3:
                 FragmentAlbums falbums = new FragmentAlbums();
                 loadFrag(falbums, getResources().getString(R.string.albums), fm);
-                break;
-            case 4:
+                break;*/
+            case 2:
                 FragmentServerPlaylist fserverplay = new FragmentServerPlaylist();
                 loadFrag(fserverplay, getResources().getString(R.string.playlist), fm);
                 break;
-            case 5:
+            case 3:
                 FragmentPlaylist fplay = new FragmentPlaylist();
                 loadFrag(fplay, getResources().getString(R.string.my_playlist), fm);
                 break;
-            case 6:
+            case 4:
                 if (isDownloadAvailable) {
                     FragmentDownloads fdownload = new FragmentDownloads();
                     loadFrag(fdownload, getResources().getString(R.string.downloads), fm);
@@ -427,17 +427,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     checkPer();
                 }
                 break;
-            case 7:
+            case 5:
                 FragmentFav ffav = new FragmentFav();
                 loadFrag(ffav, getResources().getString(R.string.favourite), fm);
                 break;
-            case 8:
+            case 6:
                 Intent ishare = new Intent(Intent.ACTION_SEND);
                 ishare.setType("text/plain");
                 ishare.putExtra(Intent.EXTRA_TEXT, getResources().getString(R.string.app_name) + " - http://play.google.com/store/apps/details?id=" + getPackageName());
                 startActivity(ishare);
                 break;
-            case 9:
+            case 7:
                 final String appName = getPackageName();//your application package name i.e play store application url
                 try {
                     startActivity(new Intent(Intent.ACTION_VIEW,
@@ -450,7 +450,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     + appName)));
                 }
                 break;
-            case 10:
+            case 8:
                 Intent intent_setting = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent_setting);
                 break;
