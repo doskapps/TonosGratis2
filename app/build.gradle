@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.doskapps.tonosgratis"
         minSdkVersion 17
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.1"
         ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
