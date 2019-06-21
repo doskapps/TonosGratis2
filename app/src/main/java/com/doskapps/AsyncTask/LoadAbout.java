@@ -1,6 +1,7 @@
 package com.doskapps.AsyncTask;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.doskapps.interfaces.AboutListener;
 import com.doskapps.item.ItemAbout;
@@ -32,6 +33,9 @@ public class LoadAbout extends AsyncTask<String, String, Boolean> {
             JSONObject c;
             for (int i = 0; i < jsonArray.length(); i++) {
                 c = jsonArray.getJSONObject(i);
+
+                Log.d("######", c.getString("banner_ad_id"));
+                Log.d("######", Boolean.parseBoolean(c.getString("banner_ad")) + "");
 
                 String appname = c.getString("app_name");
                 String applogo = c.getString("app_logo");

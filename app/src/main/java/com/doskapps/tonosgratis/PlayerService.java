@@ -66,7 +66,7 @@ public class PlayerService extends IntentService {
     public static final String ACTION_NOTI_PLAY = "com.apps.onlinemp3.action.NOTI_PLAY";
 
     TrackSelector trackSelector;
-    NotificationCompat.Builder notification;
+    //NotificationCompat.Builder notification;
     RemoteViews bigViews, smallViews;
     DBHelper dbHelper;
     private String NOTIFICATION_CHANNEL_ID = "onlinemp3_ch_1";
@@ -107,7 +107,7 @@ public class PlayerService extends IntentService {
             Constant.exoPlayer.addListener(listener);
 
             if (Constant.arrayList_play.size() != 0) {
-                createNoti();
+            //    createNoti();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -169,7 +169,7 @@ public class PlayerService extends IntentService {
 //        changePlayPause();
         changeText();
         playAudio();
-        showNotification();
+       // showNotification();
     }
 
     Player.EventListener listener = new Player.EventListener() {
@@ -196,7 +196,7 @@ public class PlayerService extends IntentService {
             if (playbackState == Player.STATE_READY && playWhenReady) {
 //                Constant.exoPlayer.setPlayWhenReady(true);
                 setBuffer(false);
-                updateNoti();
+                //updateNoti();
             }
         }
 
@@ -278,7 +278,7 @@ public class PlayerService extends IntentService {
         protected String doInBackground(String... a) {
 
 
-            notification.setLargeIcon(getBitmapFromURL(Constant.arrayList_play.get(Constant.playPos).getImageSmall()));
+            //notification.setLargeIcon(getBitmapFromURL(Constant.arrayList_play.get(Constant.playPos).getImageSmall()));
             String s = Constant.arrayList_play.get(Constant.playPos).getMp3Url().replace(" ", "%20");
             try {
                 JsonUtils.getJSONString(Constant.URL_SONG_1 + Constant.arrayList_play.get(Constant.playPos).getId() + Constant.URL_SONG_2 + "");
@@ -329,7 +329,7 @@ public class PlayerService extends IntentService {
             handleFirstPlay();
         }
         changeEquilizer();
-        updateNotiPlay(Constant.isPlaying);
+        //updateNotiPlay(Constant.isPlaying);
     }
 
     private void previous() {
@@ -369,7 +369,7 @@ public class PlayerService extends IntentService {
         changeEquilizer();
         Constant.exoPlayer.setPlayWhenReady(false);
         changePlayPause();
-        updateNotiPlay(Constant.isPlaying);
+        //updateNotiPlay(Constant.isPlaying);
     }
 
     private void changePlayPause() {
@@ -390,10 +390,10 @@ public class PlayerService extends IntentService {
     }
 
     private void showNotification() {
-        startForeground(101, notification.build());
+        //startForeground(101, notification.build());
     }
 
-    private void createNoti() {
+    /*private void createNoti() {
         bigViews = new RemoteViews(getPackageName(), R.layout.layout_notification);
         smallViews = new RemoteViews(getPackageName(), R.layout.layout_noti_small);
 
@@ -424,7 +424,7 @@ public class PlayerService extends IntentService {
         PendingIntent pcloseIntent = PendingIntent.getService(this, 0,
                 closeIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-        notification = new NotificationCompat.Builder(this)
+        /*notification = new NotificationCompat.Builder(this)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.app_icon))
                 .setContentTitle(getString(R.string.app_name))
                 .setPriority(Notification.PRIORITY_MAX)
@@ -432,8 +432,8 @@ public class PlayerService extends IntentService {
                 .setSmallIcon(R.drawable.notification)
                 .setTicker(Constant.arrayList_play.get(Constant.playPos).getMp3Name())
                 .setChannelId(NOTIFICATION_CHANNEL_ID)
-                .setOnlyAlertOnce(true);
-
+                .setOnlyAlertOnce(true);*/
+/*
         NotificationChannel mChannel;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Online Song";// The user-visible name of the channel.
@@ -490,9 +490,9 @@ public class PlayerService extends IntentService {
             notification.setCustomContentView(smallViews)
                     .setCustomBigContentView(bigViews);
         }
-    }
+    }*/
 
-    private void updateNoti() {
+    /*private void updateNoti() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notification.setContentTitle(Constant.arrayList_play.get(Constant.playPos).getMp3Name());
             notification.setContentText(Constant.arrayList_play.get(Constant.playPos).getArtist());
@@ -502,10 +502,10 @@ public class PlayerService extends IntentService {
             smallViews.setTextViewText(R.id.status_bar_artist_name, Constant.arrayList_play.get(Constant.playPos).getArtist());
             smallViews.setTextViewText(R.id.status_bar_track_name, Constant.arrayList_play.get(Constant.playPos).getMp3Name());
         }
-        updateNotiPlay(Constant.isPlaying);
-    }
+        //updateNotiPlay(Constant.isPlaying);
+    }*/
 
-    private void updateNotiPlay(Boolean isPlay) {
+    /*private void updateNotiPlay(Boolean isPlay) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notification.mActions.remove(1);
             Intent playIntent = new Intent(this, PlayerService.class);
@@ -530,7 +530,7 @@ public class PlayerService extends IntentService {
         }
 //        startForeground(101, notification.build());
         mNotificationManager.notify(101, notification.build());
-    }
+    }*/
 
     @Override
     public void onDestroy() {

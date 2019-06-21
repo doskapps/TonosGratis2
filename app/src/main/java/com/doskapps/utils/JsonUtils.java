@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
@@ -392,6 +393,7 @@ public class JsonUtils {
     }
 
     private void showPersonalizedAds(LinearLayout linearLayout) {
+        Log.d("###@@@", "MUESTRA BANNER: " + Constant.isBannerAd);
         if (Constant.isBannerAd) {
             AdView adView = new AdView(_context);
             AdRequest adRequest = new AdRequest.Builder()
@@ -419,6 +421,7 @@ public class JsonUtils {
     }
 
     public void showBannerAd(LinearLayout linearLayout) {
+        Log.d("###@@@", "MUESTRA showNonPersonalizedAds: " + (ConsentInformation.getInstance(_context).getConsentStatus() == ConsentStatus.NON_PERSONALIZED));
         Constant.isBannerAdCalled = true;
         if(ConsentInformation.getInstance(_context).getConsentStatus() == ConsentStatus.NON_PERSONALIZED) {
             showNonPersonalizedAds(linearLayout);
