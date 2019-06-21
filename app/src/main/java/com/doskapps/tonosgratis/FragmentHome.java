@@ -11,6 +11,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -87,14 +89,22 @@ public class FragmentHome extends Fragment {
         arrayList_recent = new ArrayList<>();
         arrayList_artist = new ArrayList<>();
 
-        recyclerView = rootView.findViewById(R.id.recyclerView_home_recent);
+        /*recyclerView = rootView.findViewById(R.id.recyclerView_home_recent);
         linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setHasFixedSize(true);*/
+
+        /////
+        recyclerView = rootView.findViewById(R.id.recyclerView_home_recent);
+        linearLayoutManager = new GridLayoutManager(getActivity(), 3);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
+        /////
 
         //recyclerView_artist = rootView.findViewById(R.id.recyclerView_home_artist);
-        llm_artist = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        //llm_artist = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         //recyclerView_artist.setLayoutManager(llm_artist);
         //recyclerView_artist.setItemAnimator(new DefaultItemAnimator());
         //recyclerView_artist.setHasFixedSize(true);
