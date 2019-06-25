@@ -115,7 +115,11 @@ public class FragmentHome extends Fragment {
         button_try = rootView.findViewById(R.id.button_empty_try);
 
         if (JsonUtils.isNetworkAvailable(getActivity())) {
-            new LoadLatestNews().execute(Constant.URL_LATEST);
+            if (Constant.LANGUAGE.equals("ES")) {
+                new LoadLatestNews().execute(Constant.URL_LATEST + "&lang=es");
+            } else {
+                new LoadLatestNews().execute(Constant.URL_LATEST);
+            }
         } else {
 //            Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
             errr_msg = getString(R.string.internet_not_conn);
@@ -173,7 +177,11 @@ public class FragmentHome extends Fragment {
             @Override
             public void onClick(View v) {
                 if (JsonUtils.isNetworkAvailable(getActivity())) {
-                    new LoadLatestNews().execute(Constant.URL_LATEST);
+                    if (Constant.LANGUAGE.equals("ES")) {
+                        new LoadLatestNews().execute(Constant.URL_LATEST + "&lang=es");
+                    } else {
+                        new LoadLatestNews().execute(Constant.URL_LATEST);
+                    }
                 } else {
 //            Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
                     errr_msg = getString(R.string.internet_not_conn);

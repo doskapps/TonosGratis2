@@ -107,7 +107,7 @@ public class PlayerService extends IntentService {
             Constant.exoPlayer.addListener(listener);
 
             if (Constant.arrayList_play.size() != 0) {
-            //    createNoti();
+                //    createNoti();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -169,7 +169,7 @@ public class PlayerService extends IntentService {
 //        changePlayPause();
         changeText();
         playAudio();
-       // showNotification();
+        // showNotification();
     }
 
     Player.EventListener listener = new Player.EventListener() {
@@ -281,7 +281,12 @@ public class PlayerService extends IntentService {
             //notification.setLargeIcon(getBitmapFromURL(Constant.arrayList_play.get(Constant.playPos).getImageSmall()));
             String s = Constant.arrayList_play.get(Constant.playPos).getMp3Url().replace(" ", "%20");
             try {
-                JsonUtils.getJSONString(Constant.URL_SONG_1 + Constant.arrayList_play.get(Constant.playPos).getId() + Constant.URL_SONG_2 + "");
+                String url = Constant.URL_SONG_1 + Constant.arrayList_play.get(Constant.playPos).getId() + Constant.URL_SONG_2 + "";
+
+                if (Constant.LANGUAGE.equals("ES")) {
+                    url = url + "&lang=es";
+                }
+                JsonUtils.getJSONString(url);
                 DefaultBandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
                 DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory((MainActivity) Constant.context,
                         Util.getUserAgent((MainActivity) Constant.context, "onlinemp3"), bandwidthMeter);

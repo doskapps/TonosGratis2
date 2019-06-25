@@ -33,6 +33,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -59,6 +60,7 @@ import android.widget.Toast;
 import com.google.ads.consent.ConsentInformation;
 import com.google.ads.consent.ConsentStatus;
 import com.google.ads.mediation.admob.AdMobAdapter;
+import com.google.android.exoplayer2.C;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -89,6 +91,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -162,6 +165,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (Constant.itemAbout == null) {
             Constant.itemAbout = new ItemAbout("", "", "", "", "", "", "", "", "", "");
         }
+
+        // Se obtiene el leguaje del dipositivo
+        Constant.LANGUAGE = Locale.getDefault().getLanguage().toUpperCase();
 
         adConsent = new AdConsent(this, new AdConsentListener() {
             @Override
@@ -272,7 +278,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (Constant.isFromPush) {
             if (JsonUtils.isNetworkAvailable(MainActivity.this)) {
                 if (!Constant.pushSID.equals("0")) {
-                    new LoadSong().execute(Constant.URL_SONG_1 + Constant.pushSID + Constant.URL_SONG_2 + deviceId);
+                    if (Constant.LANGUAGE.equals("ES")) {
+                        new LoadSong().execute(Constant.URL_SONG_1 + Constant.pushSID + Constant.URL_SONG_2 + deviceId + "&lang=es");
+                    } else {
+                        new LoadSong().execute(Constant.URL_SONG_1 + Constant.pushSID + Constant.URL_SONG_2 + deviceId);
+                    }
                 } else if (!Constant.pushCID.equals("0")) {
                     loadCatFrag();
                 } else if (!Constant.pushAID.equals("0")) {
@@ -1335,7 +1345,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (mRecentlyBackPressed) {
                 mExitHandler.removeCallbacks(mExitRunnable);
                 mRecentlyBackPressed = false;
-                moveTaskToBack(true);
+                //moveTaskToBack(true);
+                finish();
             } else {
                 mRecentlyBackPressed = true;
                 Toast.makeText(this, getResources().getString(R.string.press_again_exit), Toast.LENGTH_SHORT).show();
@@ -1389,6 +1400,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ratingBar.setStepSize(Float.parseFloat("1"));
 
         if (Constant.arrayList_play.get(viewpager.getCurrentItem()).getUserRating().equals("")) {
+            String url = Constant.URL_SONG_1 + Constant.arrayList_play.get(viewpager.getCurrentItem()).getId() + Constant.URL_SONG_2 + deviceId;
+
+            if (Constant.LANGUAGE.equals("ES")) {
+                url = url + "&lang=es";
+            }
+
             new GetRating(new RatingListener() {
                 @Override
                 public void onStart() {
@@ -1406,7 +1423,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Constant.arrayList_play.get(viewpager.getCurrentItem()).setUserRating(String.valueOf(rating));
 
                 }
-            }).execute(Constant.URL_SONG_1 + Constant.arrayList_play.get(viewpager.getCurrentItem()).getId() + Constant.URL_SONG_2 + deviceId);
+            }).execute(url);
         } else {
             if(Integer.parseInt(Constant.arrayList_play.get(viewpager.getCurrentItem()).getUserRating())!= 0 && !Constant.arrayList_play.get(viewpager.getCurrentItem()).getUserRating().equals("")) {
                 textView.setText(getString(R.string.thanks_for_rating));

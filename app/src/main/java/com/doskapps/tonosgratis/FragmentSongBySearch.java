@@ -105,7 +105,11 @@ public class FragmentSongBySearch extends Fragment {
                 Constant.search_item = s.replace(" ","%20");
                 arrayList.clear();
                 adapterSongList.notifyDataSetChanged();
-                new LoadSongs().execute(Constant.URL_SEARCH + Constant.search_item);
+                if (Constant.LANGUAGE.equals("ES")) {
+                    new LoadSongs().execute(Constant.URL_SEARCH + Constant.search_item + "&lang=es");
+                } else {
+                    new LoadSongs().execute(Constant.URL_SEARCH + Constant.search_item);
+                }
             } else {
                 Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
             }
@@ -120,7 +124,11 @@ public class FragmentSongBySearch extends Fragment {
 
     private void getSongList() {
         if (JsonUtils.isNetworkAvailable(getActivity())) {
-            new LoadSongs().execute(Constant.URL_SEARCH + Constant.search_item);
+            if (Constant.LANGUAGE.equals("ES")) {
+                new LoadSongs().execute(Constant.URL_SEARCH + Constant.search_item + "&lang=es");
+            } else {
+                new LoadSongs().execute(Constant.URL_SEARCH + Constant.search_item);
+            }
         } else {
 //            Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
             errr_msg = getString(R.string.internet_not_conn);

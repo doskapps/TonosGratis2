@@ -56,18 +56,23 @@
             android:value="@integer/google_play_services_version" />
 
         <!-- Activity required to show ad overlays. -->
+        <!--admob-->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
-        <!--service
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
             android:name="com.doskapps.utils.NotificationExtenderExample"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE">
             <intent-filter>
                 <action android:name="com.onesignal.NotificationExtender" />
             </intent-filter>
-        </service-->
+        </service>
 
     </application>
 

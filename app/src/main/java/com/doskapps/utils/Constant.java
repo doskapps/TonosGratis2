@@ -73,6 +73,8 @@ public class Constant implements Serializable {
     public static final String TAG_PLAYLIST_IMAGE = "playlist_image";
     public static final String TAG_PLAYLIST_THUMB = "playlist_image_thumb";
 
+    public static String LANGUAGE = "";
+
     public static ItemAbout itemAbout;
 
     public static SimpleExoPlayer exoPlayer;

@@ -94,7 +94,11 @@ public class FragmentCat extends Fragment {
 
     private void getCat() {
         if (JsonUtils.isNetworkAvailable(getActivity())) {
-            new LoadCat().execute(Constant.URL_CAT);
+            if (Constant.LANGUAGE.equals("ES")) {
+                new LoadCat().execute(Constant.URL_CAT + "_" + Constant.LANGUAGE);
+            } else {
+                new LoadCat().execute(Constant.URL_CAT);
+            }
         } else {
 //            Toast.makeText(getActivity(), getResources().getString(R.string.internet_not_conn), Toast.LENGTH_SHORT).show();
             errr_msg = getString(R.string.internet_not_conn);

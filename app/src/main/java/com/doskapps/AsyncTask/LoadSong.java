@@ -1,6 +1,7 @@
 package com.doskapps.AsyncTask;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.doskapps.interfaces.SongListener;
 import com.doskapps.item.ItemSong;
@@ -31,6 +32,7 @@ public class LoadSong extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... strings) {
+        Log.d("##@@##", strings[0]);
         try {
             String json = JsonUtils.getJSONString(strings[0]);
 

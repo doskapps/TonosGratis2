@@ -139,6 +139,9 @@ public class FragmentSongByAlbums extends Fragment {
             url = Constant.URL_SONG_BY_ARTIST + name.replace(" ","%20");
         } else if (type.equals(getString(R.string.category))) {
             url = Constant.URL_SONG_BY_CAT + id;
+            if (Constant.LANGUAGE.equals("ES")) {
+                url = url + "&lang=es";
+            }
         }
         loadSong.execute(url);
     }
@@ -175,7 +178,11 @@ public class FragmentSongByAlbums extends Fragment {
             }
         });
 
-        loadSong.execute(Constant.URL_SONG_BY_PLAYLIST + id);
+        if (Constant.LANGUAGE.equals("ES")) {
+            loadSong.execute(Constant.URL_SONG_BY_PLAYLIST + id + "&lang=es");
+        } else {
+            loadSong.execute(Constant.URL_SONG_BY_PLAYLIST + id);
+        }
     }
 
     private void setAdapter() {
