@@ -498,16 +498,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onDestroy() {
-        if (!Constant.isPlaying && Constant.isPlayed) {
+        //if (!Constant.isPlaying && Constant.isPlayed) {
             Intent intent = new Intent(getApplicationContext(), PlayerService.class);
             intent.setAction(PlayerService.ACTION_STOP);
             startService(intent);
-        }
+        //}
         Constant.isAppOpen = false;
         super.onDestroy();
     }
-
-
 
     private void initiSlidingUpPanel() {
         ll_topplayer = findViewById(R.id.ll_topplayer);
