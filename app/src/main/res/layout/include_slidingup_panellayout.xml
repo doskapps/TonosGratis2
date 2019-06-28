@@ -40,7 +40,8 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="95dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <View
             android:id="@+id/divider"
