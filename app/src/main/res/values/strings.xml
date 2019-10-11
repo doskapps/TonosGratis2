@@ -7,7 +7,7 @@
 
     <string name="play_more_apps">http://play.google.com/store/apps/dev?id=6759801266603780351</string>
 
-    <string name="privacy_policy_url">http://doskapps.com/privacy-policy/</string>
+    <string name="privacy_policy_url">https://doskapps.com/privacy-policy/</string>
 
     <!--if you want rtl change value of isRTL to true else false-->
     <string name="isRTL">false</string>
